@@ -61,5 +61,5 @@ reliable physical insights from noisy, large-scale datasets.
 | **Institution** | Sapienza University of Rome / TU Wien (Erasmus) |
 | **Advisors** | Prof. D. Borello (Sapienza), Prof. A. Soldati (TU Wien) |
 | **Co-Advisors** | Dr. G. Caridi, L. Beckedorff |
-| **Defense** | September 2024 |
+| **Defense** | October 2024 |
 | **License** | MIT |
