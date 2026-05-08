@@ -7,9 +7,10 @@ experimental measurement data from an industrial turbulence facility, applying
 statistical validation, signal processing, and automated QC pipelines to extract 
 reliable physical insights from noisy, large-scale datasets.
 
-> **Core focus:** Turning raw experimental sensor data into validated, analysis-ready 
-> datasets through automated processing pipelines — not manual inspection.
-
+> **Core focus:** Batch processing of high-frequency PIV measurement data 
+> through reproducible MATLAB pipelines — from raw velocity fields to 
+> turbulent energy statistics — with automated convergence tracking and 
+> statistical decomposition across hundreds of experimental frames.
 ---
 
 ## 🛠️ What This Framework Does
