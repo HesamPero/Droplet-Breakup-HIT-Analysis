@@ -1,35 +1,65 @@
-# HIT Droplet Dynamics Analysis
-### Integrated Research Framework for HIT Characterization and Droplet Breakup Dynamics
+# HIT Droplet Dynamics — Data Analysis Framework
+### Signal Processing & Statistical Validation Pipeline for Experimental Turbulence Data
 
-This repository contains the numerical framework developed for my Master's Thesis at **Sapienza University of Rome** in collaboration with **TU Wien**. The project focuses on validating the **Kolmogorov-Hinze (KH) framework** in high-energy turbulent environments.
+A MATLAB-based data engineering framework developed during my Master's research at 
+**Sapienza University of Rome / TU Wien**. The project processes high-frequency 
+experimental measurement data from an industrial turbulence facility, applying 
+statistical validation, signal processing, and automated QC pipelines to extract 
+reliable physical insights from noisy, large-scale datasets.
 
-## 📊 Data Analysis & Physical Insights
+> **Core focus:** Turning raw experimental sensor data into validated, analysis-ready 
+> datasets through automated processing pipelines — not manual inspection.
 
-### 1. Turbulence Validation (Continuous Phase)
-The framework validates the **TUWien-HIT facility**'s ability to generate Homogeneous Isotropic Turbulence (HIT):
-* **Isotropy Analysis**: By computing the ratio of longitudinal to transverse RMS velocity fluctuations ($u'/v'$), the study confirmed levels between **0.87 and 0.96**.
-* **Homogeneity**: Velocity RMS profiles remain constant across the octagonal test section, confirming that turbulence properties are independent of position.
-* **Energy Cascade**: The analysis identified the **Inertial Subrange** using second-order structure functions ($D_{LL}, D_{NN}$), resolving energy dissipation rates ($\epsilon$) up to **$0.22 \, m^2/s^3$**.
+---
 
-### 2. Interfacial Dynamics (Dispersed Phase)
-Using the **Pendant Drop Method**, the framework analyzes the stability of various silicon oils:
-* **Convergence via Worthington Number ($Wo$)**: IFT measurements were validated through $Wo$ analysis; stable, accurate data was identified when **$Wo > 0.36$**.
-* **Regime Mapping**: Droplet behavior was mapped onto the **Ohnesorge ($Oh$)** vs. **$D/\eta$** regime map, identifying thresholds for "Sharp Neck" vs. "Long Neck" fragmentation.
+## 🛠️ What This Framework Does
 
-## 📂 Project Structure
-* **`/Turbulence_Analysis`**: MATLAB processing for 2D-PIV data (Phantom VEO 340L) to extract TKE and $\epsilon$.
-* **`/Interfacial_Tension`**: Analysis of Pendant Drop tensiometry (OCA-25) to calculate Bond ($Bo$) and Worthington ($Wo$) numbers.
+- Ingests and processes **high-frequency PIV image data streams** (up to 2.5 kHz) 
+  from industrial-scale measurement equipment
+- Applies **automated QC algorithms** to detect and filter invalid measurements 
+  before they propagate into analysis
+- Extracts **energy dissipation rates (ε)** and turbulent kinetic energy (TKE) 
+  from raw velocity fields using second-order structure functions
+- Validates **statistical convergence** of interfacial tension measurements using 
+  the Worthington Number (Wo) as a convergence criterion
+- Produces **interactive visualizations** and regime maps for process classification
 
-## 🛠 Experimental Specifications
-* **Facility**: Jet-stirred tank achieving jet Reynolds numbers up to **100,000**.
-* **Fluids**: Dow Corning 200 0.65CS, Wacker-AK 1000, and Shin-Etsu KF-56.
-* **Imaging**: High-speed PIV at frequencies up to **2.5 kHz**.
+---
+
+## 📊 Data Pipeline Overview
+
+### Stage 1 — Raw Data Ingestion & QC
+- Input: 2D-PIV velocity fields (Phantom VEO 340L, up to 2.5 kHz)
+- Automated outlier detection and signal filtering
+- Statistical convergence checks (isotropy ratio u'/v': confirmed 0.87–0.96)
+
+### Stage 2 — Signal Processing
+- Fourier transformation and spectral density estimation
+- Autocorrelation analysis for turbulent scale identification
+- Inertial subrange detection via structure functions (D_LL, D_NN)
+- Energy dissipation rate (ε) extraction: up to **0.22 m²/s³**
+
+### Stage 3 — Statistical Validation
+- Pendant Drop tensiometry data processed for interfacial tension (IFT)
+- Convergence validated via Worthington Number (Wo > 0.36 = stable measurement)
+- Bond number (Bo) calculation for fluid characterization
+
+### Stage 4 — Output & Visualization
+- Regime classification maps (Ohnesorge vs. D/η)
+- Energy cascade plots
+- Validated datasets ready for downstream modeling
+
+---
+
+## 📂 Repository Structure
+---
 
 ## 🎓 Academic Context
-* **Author**: Hesam Pero
-* **Advisors**: Prof. Domenico Borello (Sapienza)
-* **Co-Advisors**: Prof. Alfredo Soldati (TU Wien), PhD. Giuseppe Caridi, Leonel Beckedorff
-* **Defense Date**: 24 September 2024
 
-## 📄 License & Citation
-This project is licensed under the **MIT License**. As part of the academic record for this research, please cite this repository and include the license in relevant bibliographies.
+| | |
+|---|---|
+| **Institution** | Sapienza University of Rome / TU Wien (Erasmus) |
+| **Advisors** | Prof. D. Borello (Sapienza), Prof. A. Soldati (TU Wien) |
+| **Co-Advisors** | Dr. G. Caridi, L. Beckedorff |
+| **Defense** | September 2024 |
+| **License** | MIT |
